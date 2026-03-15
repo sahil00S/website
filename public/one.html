@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Website</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+    body {
+        background-image: url(./amazing-scientific-natural-phenomenon-moon-covering-sun-total-solar-eclipse-diamond-ring-effect-internal-corona-101922109.jpg);
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+        color: white;
+    }
+    
+   
+    .navbar {
+        position: fixed; 
+        top: 0;
+        width: 100%;
+        background: rgba(15, 15, 15, 0.8); 
+        z-index: 100;
+        padding: 0.5rem 1rem;
+        transition: all 0.3s ease;
+    }
+    
+    .navbar-brand {
+        font-weight: bold;
+        font-size: 1.5rem;
+    }
+
+    .navbar-nav .nav-link {
+        color: white;
+        margin: 0 0.5rem;
+        transition: color 0.3s;
+    }
+
+    .navbar-nav .nav-link:hover {
+        color: #f8f9fa;
+    }
+    
+    
+    .video-section {
+        position: relative;
+        height: 100vh; 
+        overflow: hidden;
+        z-index: 1;
+        margin-bottom: 2rem;
+    }
+    
+    .video-section .carousel-inner video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    @media (max-width: 768px) {
+        .video-section {
+            height: 50vh;
+        }
+    }
+    
+    
+    .carousel-indicators button {
+        background-color: rgb(209, 197, 197);
+        z-index: 50;
+    }
+    
+    
+    .overlay {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        color: white;
+        width: 100%;
+        z-index: 10;
+        padding: 0 1rem;
+    }
+
+    .overlay h1 {
+        font-size: calc(1.5rem + 2vw);
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    }
+
+    .overlay p {
+        font-size: calc(0.9rem + 0.5vw);
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+    }
+    
+    .post-item {
+        text-align: center;
+        margin-bottom: 30px;
+        transition: transform 0.3s;
+    }
+
+    .post-item:hover {
+        transform: translateY(-5px);
+    }
+    
+    .post-item video {
+        width: 100%;
+        height: 200px;
+        border-radius: 15px;
+        object-fit: cover;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .post-item h5 {
+        margin-top: 1rem;
+        font-weight: 600;
+    }
+
+    .team-member {
+        margin-bottom: 2rem;
+        transition: transform 0.3s;
+    }
+
+    .team-member:hover {
+        transform: translateY(-5px);
+    }
+
+    .team-member img {
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+        border: 3px solid white;
+        margin-bottom: 1rem;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    @media (max-width: 768px) {
+        .team-member img {
+            width: 120px;
+            height: 120px;
+        }
+    }
+    
+    
+    footer {
+        position: relative;
+        width: 100%;
+        background: rgba(15, 15, 15, 0.8);
+        color: white;
+        padding: 2rem 0;
+        z-index: 10;
+        margin-top: 3rem;
+    }
+
+    footer a {
+        color: white;
+        text-decoration: none;
+        transition: color 0.3s;
+    }
+
+    footer a:hover {
+        color: #f8f9fa;
+        text-decoration: underline;
+    }
+
+    footer .social-icons i {
+        margin: 0 0.5rem;
+        cursor: pointer;
+        transition: transform 0.3s;
+    }
+
+    footer .social-icons i:hover {
+        transform: scale(1.2);
+    }
+
+   
+    .section-header {
+        margin-bottom: 2rem;
+        text-align: center;
+        position: relative;
+    }
+
+    .section-header h2 {
+        font-size: calc(1.5rem + 1vw);
+        display: inline-block;
+        padding-bottom: 0.5rem;
+        position: relative;
+    }
+
+    .section-header h2:after {
+        content: '';
+        position: absolute;
+        width: 50%;
+        height: 2px;
+        background-color: white;
+        bottom: 0;
+        left: 25%;
+    }
+
+    
+    .content-container {
+        background-color: rgba(0, 0, 0, 0.6);
+        border-radius: 15px;
+        padding: 2rem;
+        margin-top: 2rem;
+    }
+
+    @media (max-width: 576px) {
+        .content-container {
+            padding: 1rem;
+        }
+    }
+    </style>
+</head>
+<body>
+    
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Home Page</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="One.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="More.html">More</a>
+                    </li>
+                   
+                    <li class="nav-item">
+                        <a class="nav-link" href="Destination.html">Destinations</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="booking.html">Book now</a>
+                      <li class="nav-item">
+                        <a class="nav-link" href="login.html">Login</a>
+                        <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    
+    <div id="videoSlider" class="carousel slide video-section" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#videoSlider" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#videoSlider" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#videoSlider" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <video autoplay muted loop playsinline>
+                    <source src="https://cdn.pixabay.com/video/2018/02/19/14385-256955049_tiny.mp4" type="video/mp4">
+                </video>
+                <div class="overlay">
+                    <h1>Discover the World</h1>
+                    <p>Unforgettable adventures await you</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <video autoplay muted loop playsinline>
+                    <source src="https://cdn.pixabay.com/video/2021/08/20/85760-590014855_tiny.mp4" type="video/mp4">
+                </video>
+                <div class="overlay">
+                    <h1>Experience Nature</h1>
+                    <p>Connect with the world's most beautiful landscapes</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <video autoplay muted loop playsinline>
+                    <source src="https://cdn.pixabay.com/video/2020/01/25/31569-387675206_tiny.mp4" type="video/mp4">
+                </video>
+                <div class="overlay">
+                    <h1>Explore New Cultures</h1>
+                    <p>Immerse yourself in rich traditions and history</p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#videoSlider" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#videoSlider" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    
+    <div class="container content-container">
+        <div class="section-header">
+            <h2>Latest Posts</h2>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-lg-4 post-item">
+                <div id="hiddenGemsSlider" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <video autoplay muted loop playsinline>
+                                <source src="https://media.istockphoto.com/id/1219181221/video/ice-rock-with-black-sand-beach-at-jokulsarlon-beach-diamond-beach-in-iceland-2020.mp4?s=mp4-640x640-is&k=20&c=ReRk_wNXGA--VBGGfAFKE6xcSf5aVGTweX45pYGb3GA=" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="carousel-item">
+                            <video autoplay muted loop playsinline>
+                                <source src="https://cdn.pixabay.com/video/2024/03/28/205923_tiny.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+                </div>
+                <h5>Discover Hidden Gems</h5>
+                <p>Explore off-the-beaten-path destinations</p>
+            </div>
+            <div class="col-md-6 col-lg-4 post-item">
+                <div id="adventureSlider" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <video autoplay muted loop playsinline>
+                                <source src="https://media.istockphoto.com/id/1142465749/video/4k-drone-forward-flight-over-turquoise-crystal-clear-ocean-water-near-to-tropical-paradise.mp4?s=mp4-640x640-is&k=20&c=A-bFZp8JEe8JgbVzujMpgVusMPYryaqPZ_uc6CqOKNU=" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="carousel-item">
+                            <video autoplay muted loop playsinline>
+                                <source src="https://media.istockphoto.com/id/1146941914/video/icebergs-on-diamond-beach-in-iceland.mp4?s=mp4-640x640-is&k=20&c=LxiwQONEWlUlQIr6QCYWXRCye-o6LisMecIxmK8C6yc=" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+                </div>
+                <h5>Adventure Destinations</h5>
+                <p>For thrill-seekers and adrenaline junkies</p>
+            </div>
+            <div class="col-md-6 col-lg-4 post-item">
+                <div id="foodTravelSlider" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <video autoplay muted loop playsinline>
+                                <source src="https://cdn.pixabay.com/video/2023/02/09/149935-797511795_tiny.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="carousel-item">
+                            <video autoplay muted loop playsinline>
+                                <source src="https://cdn.pixabay.com/video/2024/07/28/223547_tiny.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+                </div>
+                <h5>Top 10 Foods to Try</h5>
+                <p>Culinary journeys around the world</p>
+            </div>
+            <div class="col-md-6 col-lg-4 post-item">
+                <div id="uniqueExperiencesSlider" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <video autoplay muted loop playsinline>
+                                <source src="https://videos.pexels.com/video-files/3106/3106-uhd_1920_1080_30fps.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="carousel-item">
+                            <video autoplay muted loop playsinline>
+                                <source src="https://videos.pexels.com/video-files/1011/1011-uhd_1920_1080_30fps.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+   
+    
+    <div class="container content-container">
+        <div class="section-header">
+            <h2>Meet Our Team</h2>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-6 col-md-6 col-lg-3 team-member">
+                <img src="https://media.istockphoto.com/id/1280371040/photo/confident-stylish-european-mature-middle-aged-woman-standing-at-workplace-stylish-older.jpg?s=612x612&w=0&k=20&c=AntzoG_Z1hN6tYVBXbu58Rvz4jweBYa8669bV75yWRw=" class="rounded-circle img-fluid" alt="Team Member 1">
+                <h5>Maline Johnson</h5>
+                <p>Founder & CEO</p>
+            </div>
+            <div class="col-6 col-md-6 col-lg-3 team-member">
+                <img src="https://media.istockphoto.com/id/953526828/photo/happy-female-candidate-after-successful-job-interview.jpg?s=612x612&w=0&k=20&c=6M63FCeGiJ1GVr5vO87SI5v4NISaEBLr2Vm8FQNmfqk=" class="rounded-circle img-fluid" alt="Team Member 2">
+                <h5>Jane Smith</h5>
+                <p>Travel Expert</p>
+            </div>
+            <div class="col-6 col-md-6 col-lg-3 team-member">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_gGnf7bh7SOr89DewilTM-j2Fdd2h6LyKXA&s" class="rounded-circle img-fluid" alt="Team Member 3">
+                <h5>Mike Johnson</h5>
+                <p>Photography Artist</p>
+            </div>
+            <div class="col-6 col-md-6 col-lg-3 team-member">
+                <img src="data:image/jpeg;base64,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" class="rounded-circle img-fluid" alt="Team Member 4">
+                <h5>Lisa Brown</h5>
+                <p>Marketing Specialist</p>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="container content-container">
+        <div class="row justify-content-center">
+            <div class="col-md-8 text-center">
+                <h3>Subscribe to Our Newsletter</h3>
+                <p>Get the latest travel tips and exclusive offers directly to your inbox</p>
+                <form class="row g-3 justify-content-center">
+                    <div class="col-md-8">
+                        <input type="email" class="form-control" placeholder="Your email address">
+                    </div>
+                    <div class="col-md-4">
+                        <button type="submit" class="btn btn-primary w-100">Subscribe</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+   
+    <footer class="text-white text-center">
+        <div class="container">
+            <div class="row gy-4">
+                <div class="col-md-4">
+                    <h5>Contact Us</h5>
+                    <p><i class="bi bi-envelope me-2"></i>contact@travel.com</p>
+                    <p><i class="bi bi-telephone me-2"></i>+1 234 567 8900</p>
+                    <p><i class="bi bi-geo-alt me-2"></i>123 Travel Street, City</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <p><a href="#">Home</a></p>
+                    <p><a href="img.html">Destinations</a></p>
+                    <p><a href="#">About Us</a></p>
+                    <p><a href="booking.html ">Contact</a></p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Follow Us</h5>
+                    <div class="social-icons">
+                        <i class="bi bi-facebook fs-3"></i>
+                        <i class="bi bi-instagram fs-3"></i>
+                        <i class="bi bi-twitter fs-3"></i>
+                        <i class="bi bi-youtube fs-3"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-4 pt-2 border-top">
+                <p>&copy; 2025 Travel. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 100) {
+                navbar.style.background = 'rgba(15, 15, 15, 0.9)';
+                navbar.style.padding = '0.3rem 1rem';
+            } else {
+                navbar.style.background = 'rgba(15, 15, 15, 0.8)';
+                navbar.style.padding = '0.5rem 1rem';
+            }
+        });
+    </script>
+</body>
+</html>

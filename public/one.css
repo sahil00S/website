@@ -1,0 +1,64 @@
+/* Slider 
+.slider-section {
+  position: relative;
+  padding: 60px;
+  display: flex;
+  align-items: center;
+}
+
+.video-slider {
+  display: flex;
+  gap: 20px;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  width: 100%;
+}
+
+.video-slider video {
+  min-width: 300px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 15px;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(0,0,0,.2);
+}
+
+.video-slider video:hover {
+  transform: scale(1.05);
+}
+
+/* Buttons 
+.nav-btn {
+  background: rgba(0,0,0,.6);
+  color: white;
+  border: none;
+  font-size: 30px;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.nav-btn.left {
+  margin-right: 10px;
+}
+
+.nav-btn.right {
+  margin-left: 10px;
+}
+
+/* Popup 
+.popup {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.85);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.popup video {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 12px;
+}

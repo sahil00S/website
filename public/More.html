@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title> Luxe - Routes</title>
+
+<style>
+
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.8);
+  display: flex;
+  justify-content: center;
+  z-index: 5000;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  padding: 15px 10px;
+  display: block;
+  font-weight: bold;
+  transition: background .3s;
+}
+
+nav ul li a:hover {
+  background: rgba(255,255,255,0.2);
+  border-radius: 5px;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  scroll-behavior: smooth;
+}
+
+.hero {
+  height: 60vh;
+  background:
+    linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)),
+    url("https://www.shutterstock.com/shutterstock/videos/1111267475/thumb/1.jpg?ip=x480") center/cover no-repeat;
+  color: rgb(87, 156, 247);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 60px; 
+}
+
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+  gap: 30px;
+  padding: 60px;
+}
+
+.card {
+  background: rgb(234, 224, 236);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 15px 30px rgba(0,0,0,.12);
+  text-decoration: none;
+  color: black;
+  transition: transform .3s;
+  cursor: pointer;
+}
+
+.card:hover { transform: translateY(-10px); }
+.card img { width: 100%; height: 220px; object-fit: cover; }
+.card h3 { padding: 15px; margin: 0; text-align: center; }
+
+
+.popup {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.85);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  flex-direction: column;
+  padding: 40px;
+}
+
+.popup .slider {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 900px;
+}
+
+.video-track {
+  display: flex;
+  gap: 20px;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  width: 100%;
+}
+
+.video-track video {
+  min-width: 300px;
+  height: 200px;
+  border-radius: 12px;
+  object-fit: cover;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(0,0,0,.15);
+}
+
+.slider button {
+  background: rgba(0,0,0,.6);
+  color: white;
+  border: none;
+  font-size: 28px;
+  padding: 10px 14px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.popup .close {
+  align-self: flex-end;
+  font-size: 28px;
+  cursor: pointer;
+  color: white;
+  margin-bottom: 10px;
+}
+
+
+.ad-popup {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 3000;
+}
+
+.ad-box {
+  position: relative;
+  width: 350px;
+  height: 600px;
+  background: url('https://cdn.pixabay.com/animation/2025/01/31/15/41/15-41-48-809_512.gif') center/cover no-repeat;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.ad-box h2 { margin: 0; font-size: 28px; line-height: 1.2; }
+.ad-box p { font-size: 18px; margin: 20px 0; }
+.ad-box a {
+  display: inline-block;
+  padding: 12px 25px;
+  background: #ff7f50;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: background .3s;
+}
+.ad-box a:hover { background: #ff4500; }
+.ad-box .close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 22px;
+  cursor: pointer;
+  color: white;
+}
+
+
+.section {
+  padding: 80px 50px;
+  min-height: 100vh;
+}
+
+
+@media(max-width: 400px){
+  .ad-box { width: 90%; height: 500px; }
+  .video-track video { min-width: 200px; height: 150px; }
+}
+</style>
+</head>
+<body>
+
+
+<nav>
+  <ul>
+    <li><a href="one.html">Home</a></li>
+    <li><a href="v&v.html">About</a></li>
+    <li><a href="More.html"> More</a></li>
+    <li><a href="packags .html">Packages</a></li>
+    <li><a href="booking.html">Contact</a></li>
+   
+  </ul>
+</nav>
+
+
+<section id="hero" class="hero">
+  <h1>Luxe-Routes</h1>
+  <p>Explore the beauty of discovery</p>
+</section>
+
+
+<section id="gallery" class="cards">
+  <div class="card" onclick="openSliderPopup('oia')">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7vukyeLZWml_Owr1e-XZbK81gIMmjtyoJNQ&s">
+    <a href="Destination .html">
+    <h3>Destinations</h3>   </a>
+  </div>
+  
+  <div class="card" onclick="openSliderPopup('redbeach')">
+    <img src="../TRAVEL.jpg">
+    <a href="packags .html">
+    <h3> Best Packages & Offers </h3></a>
+  </div>
+  <div class="card" onclick="openSliderPopup('kamari')">
+    
+    <img src="https://media.cntraveler.com/photos/692b8204c5b883afeb0b697f/16:9/w_2560%2Cc_limit/Nautilus-14.jpg">
+    <a href="">
+    <h3>Hotels </h3></a>
+  </div>
+  <div class="card" onclick="openSliderPopup('perissa')">
+    <img src="../pic.jpg">
+    <a href="transport.html">
+    <h3> Transport </h3></a>
+  </div>
+  <div class="card" onclick="openSliderPopup('pyrgos')">
+    <img src=" https://img.freepik.com/premium-photo/accessories-items-traveling-table-composition_231794-254.jpg?semt=ais_hybrid&w=740&q=80">
+    <a href="Tips&sugg.html">
+    <h3> Tips & Suggestions  </h3></a>
+  </div>
+  <div class="card" onclick="openSliderPopup('ia')">
+    <img src="https://thumbs.dreamstime.com/b/bangkok-dusk-17731135.jpg">
+    <a href="gallery.html">
+    <h3> Gallery </h3></a>
+  </div>
+  <div class="card" onclick="openSliderPopup('amoudi')">
+    <img src=" https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRv8jEIsyGt7veKEaGAkXlASxHTwq4NryIkrA&s">
+    <a href="v&v.html">
+    <h3>Our Vision & Values </h3></a>
+  </div>
+  <div class="card" onclick="openSliderPopup('megalochori')">
+    
+    <a href="">
+    <h3> Join the Adventure </h3></a>
+  </div>
+  
+</section>
+
+
+<div class="popup" id="popup">
+  <span class="close" onclick="closePopup()">✖</span>
+  <div class="slider">
+    <button onclick="slide(-1,'popupTrack')">❮</button>
+    <div class="video-track" id="popupTrack"></div>
+    <button onclick="slide(1,'popupTrack')">❯</button>
+  </div>
+</div>
+
+
+<div class="ad-popup" id="ad">
+  <div class="ad-box">
+    <span class="close" onclick="closeAd()">✖</span>
+    <h2>Join Santorini Adventures!</h2>
+    <p>Sign up now to unlock exclusive tours and insider tips!</p>
+    <a href="booking.html">Register Now</a>
+  </div>
+</div>
+
+<script>
+
+const videos = {
+  oia: ['videos/oia1.mp4','videos/oia2.mp4','videos/oia3.mp4'],
+  fira: ['videos/fira1.mp4','videos/fira2.mp4'],
+  redbeach: ['videos/red1.mp4','videos/red2.mp4'],
+  kamari: ['videos/kamari1.mp4','videos/kamari2.mp4'],
+  perissa: ['videos/perissa1.mp4','videos/perissa2.mp4'],
+  pyrgos: ['','videos/pyrgos2.mp4'],
+  ia: ['videos/ia1.mp4','videos/ia2.mp4'],
+  amoudi: ['videos/amoudi1.mp4','videos/amoudi2.mp4'],
+  megalochori: ['videos/megalochori1.mp4','videos/megalochori2.mp4']
+};
+
+
+function openSliderPopup(dest){
+  const track = document.getElementById('popupTrack');
+  track.innerHTML = '';
+  videos[dest].forEach(src=>{
+    const v = document.createElement('video');
+    v.src = src;
+    v.muted = true;
+    v.loop = true;
+    v.onclick = ()=>v.play();
+    track.appendChild(v);
+  });
+  document.getElementById('popup').style.display='flex';
+}
+
+
+function slide(dir, trackId){
+  document.getElementById(trackId).scrollLeft += dir*320;
+}
+
+
+function closePopup(){
+  const popup = document.getElementById('popup');
+  popup.style.display='none';
+  const vids = popup.querySelectorAll('video');
+  vids.forEach(v=>v.pause());
+}
+
+
+setTimeout(() => {
+  const ad = document.getElementById("ad");
+  ad.style.display = "flex";
+
+  setTimeout(() => {
+    ad.style.display = "none";
+  }, 5000);
+}, 15000);
+
+
+function closeAd() {
+  document.getElementById("ad").style.display = "none";
+}
+</script>
+
+</body>
+</html>

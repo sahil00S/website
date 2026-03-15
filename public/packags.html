@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title></title>
+
+<style>
+:root {
+    --primary: #1e90ff;
+    --secondary: #00c9a7;
+    --dark: #1f2933;
+    --light: #f9fafb;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background: var(--light);
+    color: var(--dark);
+    scroll-behavior: smooth;
+}
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 8%;
+    background: white;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: var(--dark);
+    margin-left: 15px;
+    font-weight: bold;
+}
+
+.navbar a:hover {
+    color: var(--primary);
+}
+
+
+.hero {
+    background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)),
+                url('https://images01.nicepagecdn.com/page/16/31/website-template-preview-1631677.jpg') center/cover;
+    color: white;
+    padding: 120px 20px;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    max-width: 700px;
+    margin: auto;
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+
+.section {
+    padding: 70px 8%;
+}
+
+.section h2 {
+    color: var(--dark);
+    color: #12d8fa;
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 50px;
+}
+
+
+.packages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.package-card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+    transition: 0.3s;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.package-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.package-card-content {
+    padding: 20px;
+    flex: 1;
+}
+
+.package-card h3 {
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+    color: var(--primary);
+}
+
+.package-card p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.package-card .price {
+    font-weight: bold;
+    color: var(--secondary);
+    font-size: 1.2rem;
+}
+
+.package-card:hover {
+    transform: translateY(-10px);
+}
+
+
+.offer-card {
+    border-radius: 16px;
+    padding: 30px 25px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+}
+
+.offer-card:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.25);
+}
+
+.offer-card .btn {
+    display: inline-block;
+    font-size: 1rem;
+    padding: 12px 28px;
+    margin-top: 10px;
+    font-weight: bold;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.offer-card .btn:hover {
+    background: white;
+    color: inherit;
+}
+
+
+.ribbon {
+    position: absolute;
+    top: 15px;
+    left: -5px;
+    background: rgba(255,255,255,0.9);
+    color: #333;
+    padding: 5px 15px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    border-radius: 5px;
+    transform: rotate(-15deg);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+}
+.dark-mode {
+  background:#121212;
+  color:#ffffff;
+}
+
+.dark-mode .card {
+  background:#1f1f1f;
+  color:white;
+}
+
+.dark-mode .navbar {
+  background:#1f1f1f !important;
+}
+
+
+
+footer {
+    background: #333333;
+    color: #9ca3af;
+    text-align: center;
+    padding: 25px;
+    font-size: 0.9rem;
+}
+</style>
+</head>
+
+<body>
+
+
+<div class="navbar">
+    <div class="logo"><strong></strong></div>
+    <div>
+        <a href="#packages">Packages</a>
+        <a href="#offers">Offers</a>
+        <a href="Destination .html">Destination</a>
+    </div>
+</div>
+
+
+<section class="hero">
+    <h1>Discover Amazing Destinations</h1>
+    <p>Explore our curated travel packages and exclusive offers to make your next trip unforgettable.</p>
+</section>
+
+
+<section id="packages" class="section">
+    <h2>Travel Packages</h2>
+    <div class="packages-grid">
+        <div class="package-card">
+            <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34" alt="Paris">
+            <div class="package-card-content">
+                <h3>Paris, France</h3>
+                <p>Enjoy the romantic city of lights, Eiffel Tower visits, and Seine river cruises.</p>
+                <div class="price">$1299 / 5 Days</div>
+            </div>
+        </div>
+
+        <div class="package-card">
+            <img src="https://bookmychutti.com/wp-content/uploads/2022/06/bali4-1024x673.jpg" alt="Bali">
+            <div class="package-card-content">
+                <h3>Bali, Indonesia</h3>
+                <p>Relax on tropical beaches, explore temples, and enjoy vibrant local culture.</p>
+                <div class="price">$999 / 6 Days</div>
+            </div>
+        </div>
+
+        <div class="package-card">
+            <img src="https://images.musement.com/cover/0002/42/view-on-manhattan-at-night-new-york-city_header-141511.jpeg?w=1200&h=630&q=95&fit=crop" alt="New York">
+            <div class="package-card-content">
+                <h3>New York, USA</h3>
+                <p>Experience the bustling city life, Broadway shows, and iconic landmarks.</p>
+                <div class="price">$1199 / 5 Days</div>
+            </div>
+        </div>
+
+        <div class="package-card">
+            <img src="https://res.cloudinary.com/aenetworks/image/upload/c_fill,w_1200,h_630,g_auto/dpr_auto/f_auto/q_auto:eco/v1/gettyimages-1390815938" alt="Tokyo">
+            <div class="package-card-content">
+                <h3>Tokyo, Japan</h3>
+                <p>Discover modern cityscapes, ancient temples, sushi experiences, and vibrant nightlife.</p>
+                <div class="price">$1399 / 6 Days</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section id="offers" class="section" style="background:#f3f4f6;">
+    <h2>🔥 Special Offers</h2>
+    <div class="offers-grid">
+        <div class="offer-card" style="background: linear-gradient(135deg, #ff416c, #ff4b2b);">
+            <div class="ribbon">Hot Deal</div>
+            <h3>Early Bird Deal ✈️</h3>
+            <p>Book 3 months in advance and get <strong>15% off</strong> selected packages!</p>
+            <a href="#packages" class="btn">Book Now</a>
+        </div>
+
+        <div class="offer-card" style="background: linear-gradient(135deg, #1fa2ff, #12d8fa);">
+            <div class="ribbon">Limited</div>
+            <h3>Group Discount 👨‍👩‍👧‍👦</h3>
+            <p>Travel in a group of 4+ and enjoy <strong>20% off</strong> total bookings!</p>
+            <a href="#packages" class="btn">Book Now</a>
+        </div>
+
+        <div class="offer-card" style="background: linear-gradient(135deg, #f7971e, #ffd200);">
+            <div class="ribbon">Last Minute</div>
+            <h3>Last Minute Offer ⏰</h3>
+            <p>Grab special deals on last-minute bookings. Perfect for spontaneous travelers!</p>
+            <a href="#packages" class="btn">Book Now</a>
+        </div>
+
+        <div class="offer-card" style="background: linear-gradient(135deg, #ff512f, #dd2476);">
+            <div class="ribbon">Seasonal</div>
+            <h3>Seasonal Special 🎉</h3>
+            <p>Celebrate holidays with exclusive <strong>seasonal discounts</strong> on select destinations.</p>
+            <a href="#packages" class="btn">Book Now</a>
+        </div>
+
+        <div class="offer-card" style="background: linear-gradient(135deg, #11998e, #38ef7d);">
+            <div class="ribbon">Weekend</div>
+            <h3>Weekend Escape 🌴</h3>
+            <p>Enjoy weekend getaway packages at <strong>10% off</strong> for select destinations.</p>
+            <a href="#packages" class="btn">Book Now</a>
+        </div>
+
+        <div class="offer-card" style="background: linear-gradient(135deg, #fc5c7d, #6a82fb);">
+            <div class="ribbon">Family</div>
+            <h3>Family Package Deal 👨‍👩‍👧‍👦</h3>
+            <p>Special pricing for families traveling together. Save up to <strong>25%</strong> on select packages!</p>
+            <a href="#packages" class="btn">Book Now</a>
+        </div>
+    </div>
+</section>
+
+
+
+
+<footer id="contact">
+    © 2026 WanderWorld Travel • Explore the world with confidence
+</footer>
+<script>
+
+const toggle = document.getElementById("darkToggle");
+
+if(localStorage.getItem("darkMode")==="enabled"){
+  document.body.classList.add("dark-mode");
+}
+
+toggle.addEventListener("click",()=>{
+  document.body.classList.toggle("dark-mode");
+  localStorage.setItem("darkMode",
+    document.body.classList.contains("dark-mode")?"enabled":"disabled"
+  );
+});</script>
+
+
+</body>
+</html>

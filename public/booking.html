@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Travel Booking</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial, Helvetica, sans-serif;
+background-image:url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e");
+background-size:cover;
+background-position:center;
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+/* overlay */
+.overlay{
+background:rgba(0,0,0,0.45);
+width:100%;
+height:100%;
+position:absolute;
+top:0;
+left:0;
+}
+
+/* booking box */
+
+.booking-box{
+
+position:relative;
+background:white;
+padding:40px;
+border-radius:12px;
+width:350px;
+box-shadow:0 10px 40px rgba(0,0,0,0.4);
+z-index:1;
+
+}
+
+.booking-box h1{
+
+margin-bottom:20px;
+text-align:center;
+color:#333;
+
+}
+
+.booking-box input,
+.booking-box select{
+
+width:100%;
+padding:10px;
+margin-bottom:15px;
+border-radius:6px;
+border:1px solid #ccc;
+
+}
+
+.booking-box button{
+
+width:100%;
+padding:12px;
+background:#1e90ff;
+border:none;
+border-radius:6px;
+color:white;
+font-weight:bold;
+cursor:pointer;
+
+}
+
+.booking-box button:hover{
+
+background:#0066cc;
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="overlay"></div>
+
+<div class="booking-box">
+
+<h1>Book Your Trip</h1>
+
+<form id="bookingForm">
+
+<input type="text" id="name" placeholder="Name" required>
+
+<input type="email" id="email" placeholder="Email" required>
+
+<input type="tel" id="phone" placeholder="Phone" required>
+
+<select id="destination" required>
+
+<option value="">Select Destination</option>
+<option>Paris</option>
+<option>Bali</option>
+<option>Tokyo</option>
+
+</select>
+
+<input type="date" id="travelDate" required>
+
+<input type="number" id="travelers" placeholder="Travelers" required>
+
+<button type="submit">Book Now</button>
+
+</form>
+
+</div>
+
+<script>
+
+document.getElementById("bookingForm").addEventListener("submit",async(e)=>{
+
+e.preventDefault();
+
+const data={
+
+name:document.getElementById("name").value,
+email:document.getElementById("email").value,
+phone:document.getElementById("phone").value,
+destination:document.getElementById("destination").value,
+travelDate:document.getElementById("travelDate").value,
+travelers:document.getElementById("travelers").value
+
+};
+
+const res=await fetch("/booking",{
+
+method:"POST",
+headers:{
+"Content-Type":"application/json"
+},
+body:JSON.stringify(data)
+
+});
+
+const result=await res.json();
+
+alert(result.message);
+
+});
+
+</script>
+
+</body>
+</html>

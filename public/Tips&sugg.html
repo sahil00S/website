@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Travel Tips & Suggestions</title>
+
+<style>
+:root {
+    --primary: #1e90ff;
+    --secondary: #00c9a7;
+    --dark: #1f2933;
+    --light: #f9fafb;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background: var(--light);
+    color: var(--dark);
+    scroll-behavior: smooth;
+}
+
+
+.hero {
+    background: linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)),
+                url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e') center/cover;
+    color: white;
+    padding: 90px 20px;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    max-width: 700px;
+    margin: auto;
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+
+.section {
+    padding: 70px 8%;
+}
+
+.section h2 {
+    color: var(--dark);
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 50px;
+}
+
+
+.tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+}
+
+
+.tip-card {
+    background: white;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.tip-card:hover {
+    transform: translateY(-10px);
+}
+
+.tip-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.tip-card h3 {
+    margin-bottom: 10px;
+}
+
+.tip-card p {
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+
+.faq-answer {
+    display: none;
+    margin-top: 15px;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+
+.highlight {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+    text-align: center;
+    padding: 70px 20px;
+}
+
+.highlight h2 {
+    font-size: 2.3rem;
+    margin-bottom: 20px;
+}
+
+.highlight p {
+    max-width: 800px;
+    margin: auto;
+    line-height: 1.7;
+}
+
+
+footer {
+    background: #333333;
+    color: #9ca3af;
+    text-align: center;
+    padding: 25px;
+    font-size: 0.9rem;
+}
+
+
+@media(max-width:600px){
+    .hero h1 { font-size:2rem; }
+    .hero p { font-size:1rem; }
+}
+</style>
+</head>
+
+<body>
+
+
+<section class="hero">
+    <h1>Travel Tips & Smart Suggestions</h1>
+    <p>Explore the world confidently with expert travel advice, safety tips, and smart planning strategies.</p>
+</section>
+
+
+<section class="section">
+    <h2>Essential Travel Tips</h2>
+    <div class="tips-grid">
+        <div class="tip-card">
+            <div class="tip-icon">🧳</div>
+            <h3>Pack Smart</h3>
+            <p>Travel light and pack only essentials. Use packing cubes and keep important documents in carry-on luggage.</p>
+        </div>
+
+        <div class="tip-card">
+            <div class="tip-icon">📍</div>
+            <h3>Plan Ahead</h3>
+            <p>Research destinations, weather, transport, and local customs to avoid last-minute stress.</p>
+        </div>
+
+        <div class="tip-card">
+            <div class="tip-icon">💳</div>
+            <h3>Manage Your Budget</h3>
+            <p>Use travel-friendly cards, track expenses, and keep emergency cash in separate places.</p>
+        </div>
+
+        <div class="tip-card">
+            <div class="tip-icon">📱</div>
+            <h3>Use Travel Apps</h3>
+            <p>Offline maps, translators, currency converters, and booking apps can save time and money.</p>
+        </div>
+
+        <div class="tip-card">
+            <div class="tip-icon">🛡️</div>
+            <h3>Stay Safe</h3>
+            <p>Keep copies of documents, avoid risky areas, and always inform someone about your itinerary.</p>
+        </div>
+
+        <div class="tip-card">
+            <div class="tip-icon">🌍</div>
+            <h3>Respect Local Culture</h3>
+            <p>Learn basic phrases, follow dress codes, and respect traditions for a richer experience.</p>
+        </div>
+    </div>
+</section>
+
+
+<section class="section" style="background:#f3f4f6;">
+    <h2>Frequently Asked Questions</h2>
+    <div class="tips-grid">
+        <div class="tip-card" onclick="toggleFAQ(this)">
+            <h3>Do I need travel insurance?</h3>
+            <p class="faq-answer">Yes! Travel insurance is highly recommended for unexpected medical emergencies, trip cancellations, or lost luggage.</p>
+        </div>
+
+        <div class="tip-card" onclick="toggleFAQ(this)">
+            <h3>How far in advance should I book flights?</h3>
+            <p class="faq-answer">Generally, booking 2-3 months in advance offers the best deals, but it can vary depending on destination and season.</p>
+        </div>
+
+        <div class="tip-card" onclick="toggleFAQ(this)">
+            <h3>Is it safe to use public Wi-Fi abroad?</h3>
+            <p class="faq-answer">Public Wi-Fi can be risky. Use a VPN and avoid accessing sensitive information on unsecured networks.</p>
+        </div>
+
+        <div class="tip-card" onclick="toggleFAQ(this)">
+            <h3>How can I avoid jet lag?</h3>
+            <p class="faq-answer">Adjust your sleep schedule before departure, stay hydrated, and spend time in sunlight at your destination.</p>
+        </div>
+    </div>
+</section>
+
+
+<section class="highlight">
+    <h2>Travel Smarter, Not Harder</h2>
+    <p>
+        The best journeys are planned with curiosity, flexibility, and respect. 
+        Use these tips to explore safely, save money, and create unforgettable memories.
+    </p>
+</section>
+
+
+<footer>
+    © 2026 WanderWorld Travel • Tips crafted for modern explorers
+</footer>
+
+<script>
+
+function toggleFAQ(card){
+    const answer = card.querySelector('.faq-answer');
+    if(answer.style.display === "none" || answer.style.display === ""){
+        answer.style.display = "block";
+        card.style.background = "linear-gradient(135deg, var(--primary), var(--secondary))";
+        card.style.color = "white";
+    } else {
+        answer.style.display = "none";
+        card.style.background = "white";
+        card.style.color = "var(--dark)";
+    }
+}
+</script>
+
+</body>
+</html>

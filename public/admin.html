@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Admin Panel</title>
+
+<style>
+
+body{
+font-family:Arial;
+background:#f4f4f4;
+padding:40px;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+background:white;
+}
+
+th,td{
+padding:10px;
+border:1px solid #ccc;
+text-align:left;
+}
+
+th{
+background:#333;
+color:white;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>All Travel Bookings</h1>
+
+<table>
+
+<thead>
+<tr>
+
+<th>Name</th>
+<th>Email</th>
+<th>Phone</th>
+<th>Destination</th>
+<th>Date</th>
+<th>Travelers</th>
+
+</tr>
+</thead>
+
+<tbody id="bookingTable"></tbody>
+
+</table>
+
+<script>
+
+async function loadBookings(){
+
+const res = await fetch("/bookings");
+
+const data = await res.json();
+
+const table = document.getElementById("bookingTable");
+
+data.forEach(b=>{
+
+table.innerHTML += `
+
+<tr>
+
+<td>${b.name}</td>
+<td>${b.email}</td>
+<td>${b.phone}</td>
+<td>${b.destination}</td>
+<td>${b.travelDate}</td>
+<td>${b.travelers}</td>
+
+</tr>
+
+`;
+
+});
+
+}
+
+loadBookings();
+
+</script>
+
+</body>
+</html>
